@@ -1,0 +1,12 @@
+{
+  "name": "superora-dashboard",
+  "version": "1.0.0",
+  "description": "Autonomous crypto dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "keywords": ["dashboard", "crypto"],
+  "author": "Hermes Agent"
+}
