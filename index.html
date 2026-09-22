@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperOra Dashboard</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); 
+            color: #e0e0ff; 
+            margin: 0; 
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .header { 
+            text-align: center; 
+            padding: 25px; 
+            background: rgba(102, 126, 234, 0.9); 
+            color: white; 
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 15px; 
+            margin-bottom: 20px;
+        }
+        .card { 
+            background: rgba(26, 26, 46, 0.7); 
+            border-radius: 15px; 
+            padding: 20px; 
+            border-left: 4px solid #00ff88;
+        }
+        .danger { border-left-color: #ff4444; }
+        .metric { display: flex; justify-content: space-between; margin: 8px 0; }
+        .value { color: #00ff86; font-weight: bold; }
+        .danger-value { color: #ff6b6b; }
+        footer { text-align: center; margin-top: 30px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 SUPERORA DASHBOARD</h1>
+        <p>Zero-Cost Autonomous Earnings Monitor</p>
+    </div>
+    
+    <div class="grid">
+        <div class="card">
+            <h3>💰 Wallet</h3>
+            <div class="metric"><span>Balance:</span><span class="danger-value">$0.00</span></div>
+            <div class="metric"><span>Network:</span><span class="value">Ethereum</span></div>
+            <div class="metric"><span>Address:</span><span class="value">0xaB6D...D05a</span></div>
+        </div>
+        
+        <div class="card">
+            <h3>🤖 Alex Engine</h3>
+            <div class="metric"><span>Status:</span><span class="danger-value">IDLE</span></div>
+            <div class="metric"><span>Target:</span><span class="value">$320/day</span></div>
+            <div class="metric"><span>Mode:</span><span class="value">Ready</span></div>
+        </div>
+        
+        <div class="card">
+            <h3>🚨 Security</h3>
+            <div class="metric"><span>Vault:</span><span class="danger-value">LOCKED</span></div>
+            <div class="metric"><span>Access:</span><span class="value">READ-ONLY</span></div>
+            <div class="metric"><span>Status:</span><span class="value">SECURE</span></div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>🔒 Private Key Never Exposed</p>
+        <p>Live since: <span id="time">${new Date().toLocaleString()}</span></p>
+    </footer>
+    
+    <script>
+        setInterval(() => {
+            document.getElementById('time').textContent = new Date().toLocaleString();
+        }, 30000);
+    </script>
+</body>
+</html>
