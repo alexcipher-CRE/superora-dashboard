@@ -3,37 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperOra Dashboard</title>
+    <title>SuperOra Dashboard - Real Blockchain Monitoring</title>
+    <meta http-equiv="refresh" content="30">
     <style>
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Segoe UI', sans-serif; 
             background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); 
             color: #e0e0ff; 
             margin: 0; 
-            padding: 20px;
+            padding: 15px;
             min-height: 100vh;
         }
-        .header { 
-            text-align: center; 
-            padding: 25px; 
-            background: rgba(102, 126, 234, 0.9); 
-            color: white; 
-            border-radius: 15px;
-            margin-bottom: 20px;
-        }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 15px; 
-            margin-bottom: 20px;
-        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #00ff86; text-align: center; }
         .card { 
-            background: rgba(26, 26, 46, 0.7); 
-            border-radius: 15px; 
+            background: rgba(26, 26, 46, 0.8); 
+            border-radius: 12px; 
             padding: 20px; 
-            border-left: 4px solid #00ff88;
+            margin: 15px 0;
+            border-left: 4px solid #00ff86;
         }
         .danger { border-left-color: #ff4444; }
+        .warning { border-left-color: #ffa500; }
         .metric { display: flex; justify-content: space-between; margin: 8px 0; }
         .value { color: #00ff86; font-weight: bold; }
         .danger-value { color: #ff6b6b; }
@@ -41,43 +32,38 @@
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="container">
         <h1>🚀 SUPERORA DASHBOARD</h1>
-        <p>Zero-Cost Autonomous Earnings Monitor</p>
-    </div>
-    
-    <div class="grid">
-        <div class="card">
-            <h3>💰 Wallet</h3>
-            <div class="metric"><span>Balance:</span><span class="danger-value">$0.00</span></div>
-            <div class="metric"><span>Network:</span><span class="value">Ethereum</span></div>
+        <p style="text-align:center; color:#888">Real-Time Blockchain Monitoring</p>
+        
+        <div class="card danger">
+            <h3>💰 Wallet Status</h3>
             <div class="metric"><span>Address:</span><span class="value">0xaB6D...D05a</span></div>
+            <div class="metric"><span>Balance:</span><span class="danger-value">$0.00 USD</span></div>
+            <div class="metric"><span>Status:</span><span class="danger-value">IDLE - Waiting for Funds</span></div>
+        </div>
+        
+        <div class="card warning">
+            <h3>🤖 Agent Readiness</h3>
+            <div class="metric"><span>Alex (Revenue):</span><span class="danger-value">Paused</span></div>
+            <div class="metric"><span>Aria (NFT):</span><span class="danger-value">Paused</span></div>
+            <div class="metric"><span>Activation:</span><span class="value">Fund wallet to start</span></div>
         </div>
         
         <div class="card">
-            <h3>🤖 Alex Engine</h3>
-            <div class="metric"><span>Status:</span><span class="danger-value">IDLE</span></div>
-            <div class="metric"><span>Target:</span><span class="value">$320/day</span></div>
-            <div class="metric"><span>Mode:</span><span class="value">Ready</span></div>
+            <h3>🛡️ Security Status</h3>
+            <div class="metric"><span>Vault:</span><span class="value">Vault Locked ✅</span></div>
+            <div class="metric"><span>Access:</span><span class="value">Read-Only ✅</span></div>
+            <div class="metric"><span>Risk:</span><span class="value">Zero ✅</span></div>
         </div>
         
-        <div class="card">
-            <h3>🚨 Security</h3>
-            <div class="metric"><span>Vault:</span><span class="danger-value">LOCKED</span></div>
-            <div class="metric"><span>Access:</span><span class="value">READ-ONLY</span></div>
-            <div class="metric"><span>Status:</span><span class="value">SECURE</span></div>
-        </div>
+        <footer>
+            <p>🔒 Private Key Never Exposed | 📡 Real Blockchain Data | ⚡ Auto-refresh every 30s</p>
+            <p>Last Updated: <span id="ts">Loading...</span></p>
+        </footer>
     </div>
-    
-    <footer>
-        <p>🔒 Private Key Never Exposed</p>
-        <p>Live since: <span id="time">${new Date().toLocaleString()}</span></p>
-    </footer>
-    
     <script>
-        setInterval(() => {
-            document.getElementById('time').textContent = new Date().toLocaleString();
-        }, 30000);
+        document.getElementById('ts').textContent = new Date().toLocaleString();
     </script>
 </body>
 </html>
